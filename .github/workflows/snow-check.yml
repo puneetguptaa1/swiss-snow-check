@@ -1,0 +1,29 @@
+name: Switzerland Snow Check
+
+on:
+  schedule:
+    # Every 12 hours: 6 AM and 6 PM UTC
+    - cron: "0 6,18 * * *"
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  check-snow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if past deadline
+        run: |
+          if [[ "$(date +%Y-%m-%d)" > "2026-03-20" ]]; then
+            echo "Past March 20, 2026 deadline. Skipping."
+            exit 0
+          fi
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run snow checker
+        run: python snow.py --topic "\${{ secrets.NTFY_TOPIC }}"
