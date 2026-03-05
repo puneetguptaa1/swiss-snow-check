@@ -26,4 +26,4 @@ jobs:
           python-version: "3.12"
 
       - name: Run snow checker
-        run: python snow.py --topic "\${{ secrets.NTFY_TOPIC }}"
+        run: python snow.py --topic "${{ secrets.NTFY_TOPIC }}"
