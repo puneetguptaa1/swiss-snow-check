@@ -41,6 +41,22 @@ LOCATIONS = [
     (46.8499, 9.5329, "Chur"),
     (46.1609, 8.7984, "Locarno"),
     (46.5547, 7.9674, "Grindelwald"),
+    # Additional locations
+    (47.0505, 8.7784, "Schwyz"),
+    (46.8013, 7.1510, "Fribourg"),
+    (47.1660, 7.6340, "Solothurn"),
+    (46.4928, 9.8353, "St. Moritz"),
+    (47.4814, 8.2114, "Baden"),
+    (47.1235, 8.2917, "Engelberg"),
+    (46.3167, 7.6167, "Leukerbad"),
+    (46.5855, 7.9089, "Mürren"),
+    (47.6947, 8.6342, "Schaffhausen"),
+    (46.1905, 6.8636, "Chamonix area (Martigny)"),
+    (46.4643, 6.8418, "Montreux"),
+    (47.3925, 8.0427, "Aarau"),
+    (46.9333, 8.5667, "Andermatt"),
+    (46.7680, 8.3320, "Meiringen"),
+    (46.6609, 9.6756, "Arosa"),
 ]
 
 
