@@ -61,6 +61,8 @@ def fetch_forecasts():
                 data = json.loads(resp.read())
             dates = data["daily"]["time"]
             snowfall = data["daily"]["snowfall_sum"]
+            forecast = dict(zip(dates, snowfall))
+            print(f"  {name}: {forecast}")
             snow_days = [
                 (d, s) for d, s in zip(dates, snowfall)
                 if s is not None and s > 0 and d <= str(DEADLINE)
@@ -68,7 +70,7 @@ def fetch_forecasts():
             if snow_days:
                 results.append((name, snow_days))
         except Exception as e:
-            print(f"Warning: failed to fetch forecast for {name}: {e}")
+            print(f"  {name}: FAILED - {e}")
     return results
 
 
